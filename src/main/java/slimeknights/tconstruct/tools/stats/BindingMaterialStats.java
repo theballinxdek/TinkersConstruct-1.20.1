@@ -8,12 +8,15 @@ import slimeknights.tconstruct.library.materials.stats.MaterialStatsId;
 
 import java.util.List;
 
-public enum BowstringMaterialStats implements IMaterialStats {
+/** Material stats for a melee/harvest binding */
+public enum BindingMaterialStats implements IMaterialStats {
   DEFAULT;
 
-  public static final MaterialStatsId ID = new MaterialStatsId(TConstruct.getResource("bowstring"));
-  public static final MaterialStatType<BowstringMaterialStats> TYPE = MaterialStatType.singleton(ID, DEFAULT);
-  private static final List<Component> LOCALIZED = List.of(IMaterialStats.makeTooltip(TConstruct.getResource("extra.no_stats")));
+  public static final MaterialStatsId ID = new MaterialStatsId(TConstruct.getResource("binding"));
+  public static final MaterialStatType<BindingMaterialStats> TYPE = MaterialStatType.singleton(ID, DEFAULT);
+
+  private static final Component NO_STATS = IMaterialStats.makeTooltip(TConstruct.getResource("extra.no_stats"));
+  private static final List<Component> LOCALIZED = List.of(NO_STATS);
   private static final List<Component> DESCRIPTION = List.of(Component.empty());
 
   // no stats
